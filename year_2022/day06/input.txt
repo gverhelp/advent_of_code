@@ -1,0 +1,15 @@
+$ cd /
+$ ls
+dir bhtvbj
+$ cd bhtvbj
+$ ls
+dir dmd
+25595 mdmtpjq.wmf
+dir qhm
+dir rjr
+dir smtrp
+dir tbdsml
+$ cd dmd
+$ ls
+232616 ngmqbc.mdj
+75367 vqqcvgts.vrc
