@@ -11,7 +11,7 @@ def ifoccurs(str : str):
 if __name__ == "__main__":
     a = 0
     for a in range(len(content)):
-        if ifoccurs(content[a:a+14]) == True:
+        if ifoccurs(content[a:a+14]):
             print(content[a:a+14])
             print(a+14)
             break 
