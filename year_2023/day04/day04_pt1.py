@@ -5,19 +5,13 @@ points = 0
 
 for card in cards:
     matching_numbers = []
-    winning_numbers, tirages = card[card.find(':') + 2:].split(' | ')
-    tirages_list = [a for a in tirages.split()]
-    winning_numbers_list = [a for a in winning_numbers.split()]
+    winning_numbers, tirages = [part.split() for part in card[card.find(':') + 2:].split(' | ')]
 
-    for a in range(len(tirages_list)):
-        if tirages_list[a] in winning_numbers_list:
-            matching_numbers.append(tirages_list[a])
+    for a in range(len(tirages)):
+        if tirages[a] in winning_numbers:
+            matching_numbers.append(tirages[a])
 
-    t_n = 0
-    for a in range(1, len(matching_numbers) + 1):
-        t_n = 1 * 2 ** (len(matching_numbers) - 1)
-
-    points += t_n
+    points += 1 * 2 ** (len(matching_numbers) - 1) if len(matching_numbers) > 0 else 0
 
 print(points)
 
