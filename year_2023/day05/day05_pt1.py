@@ -1,17 +1,9 @@
 with open('input.txt', 'r') as file:
-    data = [line.removesuffix('\n') for line in file.readlines()]
+    data = file.read().split('\n\n')
 
 seeds = data[0].split(':')[1].split()
 
-maps = [
-    [a.split() for a in data[3:26]],
-    [a.split() for a in data[28:59]],
-    [a.split() for a in data[61:87]],
-    [a.split() for a in data[89:129]],
-    [a.split() for a in data[131:173]],
-    [a.split() for a in data[175:210]],
-    [a.split() for a in data[212:249]]
-]
+maps = [[line.split() for line in data[a].splitlines()[1:]] for a in range(1, 8)]
 
 def from_to(seed, map_number):
     if map_number >= len(maps):
