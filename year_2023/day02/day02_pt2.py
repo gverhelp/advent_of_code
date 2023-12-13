@@ -15,11 +15,12 @@ def game(line : str):
             if int(draw[:2]) > greatest_number[draw[draw.find(' ')+1:]]:
                 greatest_number[draw[draw.find(' ')+1:]] = int(draw[:2])
                 
-    return greatest_number.get('green') * greatest_number.get('red') * greatest_number.get('blue')
+    return greatest_number['green'] * greatest_number['red'] * greatest_number['blue']
 
-powers = []
+if __name__ == "__main__":
+    powers = []
 
-for line in lines:
-    powers.append(game(line))
+    for line in lines:
+        powers.append(game(line))
 
-print(sum(powers))
+    print(sum(powers))

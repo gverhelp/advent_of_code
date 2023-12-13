@@ -1,5 +1,5 @@
 with open('input.txt', 'r') as file:
-    cards  = file.readlines()
+    cards = file.readlines()
 
 scratchcards_count = {a : 1 for a in range(1, 204)}
 
@@ -14,7 +14,6 @@ for card_count, card in enumerate(cards, start=1):
     for _ in range(scratchcards_count[card_count]):
         for a in range(1, len(matching_numbers) + 1):
             scratchcards_count[card_count + a] += 1
-
 
 print(sum(scratchcards_count.values()))
 

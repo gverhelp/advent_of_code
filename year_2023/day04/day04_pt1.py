@@ -1,5 +1,5 @@
 with open('input.txt', 'r') as file:
-    cards  = file.readlines()
+    cards = file.readlines()
 
 points = 0
 

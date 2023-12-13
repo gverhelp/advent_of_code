@@ -27,6 +27,6 @@ def check_around(map: str, row: int, column: int):
                     part_numbers.append(number_list[0] * number_list[1])
             b += 1
 
-[check_around(map, row, column) for row in range(len(map)) for column in range(len(map[row])) if not map[row][column].isdigit() and map[row][column] != '.']
-
-print(sum(part_numbers))
+if __name__ == "__main__":
+    [check_around(map, row, column) for row in range(len(map)) for column in range(len(map[row])) if not map[row][column].isdigit() and map[row][column] != '.']
+    print(sum(part_numbers))
