@@ -5,8 +5,7 @@ seeds = data[0].split(':')[1].split()
 
 all_seeds = []
 
-for a in range(0, len(seeds), 2):
-    all_seeds.append(b for b in range(int(seeds[a]), int(seeds[a]) + int(seeds[a + 1])))
+[all_seeds.append(b for b in range(int(seeds[a]), int(seeds[a]) + int(seeds[a + 1]))) for a in range(0, len(seeds), 2)]
 
 maps = [
     [a.split() for a in data[3:26]],
@@ -31,11 +30,10 @@ def from_to(seed, map_number):
             return from_to(new_seed, map_number + 1)
     return from_to(seed, map_number + 1)
 
-
 if __name__ == '__main__':
     res = []
 
-    for seed in seeds:
+    for seed in all_seeds:
         res.append(from_to(seed, 0))
 
     print(min(res))
