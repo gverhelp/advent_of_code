@@ -18,11 +18,7 @@ def from_to(seed, map_number):
             return from_to(new_seed, map_number + 1)
     return from_to(seed, map_number + 1)
 
-
 if __name__ == '__main__':
-    res = []
-
-    for seed in seeds:
-        res.append(from_to(seed, 0))
+    res = [from_to(seed, 0) for seed in seeds]
 
     print(min(res))
