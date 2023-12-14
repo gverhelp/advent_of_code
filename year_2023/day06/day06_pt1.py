@@ -9,7 +9,6 @@ races = [(int(time), int(distance)) for time, distance in zip(cleaned_data[0], c
 ways_to_win = {a : 0 for a in range(len(races))}
 
 def calculate_ways_to_win(race_count: int, race: tuple):
-    time = 0
     for time in range(race[0]):
         count = 0
         for _ in range(time, race[0]):
