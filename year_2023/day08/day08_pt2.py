@@ -4,7 +4,7 @@ with open('input.txt', 'r') as file:
     data = file.read()
 
 instructions = data.splitlines()[0]
-elements = {key: value.removeprefix('(').removesuffix(')').split(', ') for key, value in (line.split(' = ') for line in data.splitlines()[2:])}
+elements = {key: value.strip('()').split(', ') for key, value in (line.split(' = ') for line in data.splitlines()[2:])}
 
 nodes = [elem for elem in elements if elem.endswith('A')]
 
